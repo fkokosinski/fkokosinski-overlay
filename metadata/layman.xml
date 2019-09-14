@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE repositories SYSTEM "/dtd/repositories.dtd">
+<repositories xmlns="" version="1.0">
+  <repo priority="50" quality="experimental" status="unofficial">
+    <name>fkokosinski</name>
+    <description>Filip Kokosinski's Overlay</description>
+    <owner>
+      <email>filip.kokosinski@gmail.com</email>
+    </owner>
+    <source type="git">git://github.com/fkokosinski/fkokosinski-overlay.git</source>
+  </repo>
+</repositories>
