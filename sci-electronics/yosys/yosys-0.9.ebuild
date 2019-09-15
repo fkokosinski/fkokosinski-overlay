@@ -21,6 +21,11 @@ RDEPEND="${DEPEND}"
 BDEPEND=""
 
 S="${WORKDIR}/${PN}-${P}"
+QA_PRESTRIPPED="
+	/usr/local/bin/yosys
+	/usr/local/bin/yosys-abc
+	/usr/local/bin/yosys-filterlib
+"
 
 src_prepare() {
 	eapply_user
