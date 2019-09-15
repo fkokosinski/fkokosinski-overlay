@@ -22,19 +22,22 @@ BDEPEND=""
 
 S="${WORKDIR}/${PN}-${P}"
 QA_PRESTRIPPED="
-	/usr/local/bin/yosys
-	/usr/local/bin/yosys-abc
-	/usr/local/bin/yosys-filterlib
+	/usr/bin/yosys
+	/usr/bin/yosys-abc
+	/usr/bin/yosys-filterlib
 "
 
 src_prepare() {
 	eapply_user
 
+	mv ../berkeley-abc-abc-${ABCREV} abc
 	sed -i -e "s/${ABCREV}/default/" Makefile || die "Sed failed!"
 }
 
-src_compile() {
-	mv ../berkeley-abc-abc-${ABCREV} abc
-	make config-gcc
-	emake
+src_configure() {
+	emake config-gcc
+}
+
+src_install() {
+	emake install PREFIX="${ED}/usr" || die "Install failed!"
 }
